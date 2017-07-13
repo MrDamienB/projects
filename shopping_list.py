@@ -23,8 +23,6 @@ products = [
 #
 cart = []
 #
-itemlist = []
-#
 while True:
     itemnumber = input("Please enter an item number, or 'DONE' if complete:")
     if itemnumber == "DONE":
@@ -33,20 +31,13 @@ while True:
     elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
         cart.append(itemnumber)
         print("the itemnumber is: " + str(itemnumber))
-        print(cart)
+#        print(cart)
     else:
         print("Please verify item")
 
-
-
-#        cart.append(itemnumber)
 #        print("the itemnumber is: " + str(itemnumber))
 #        print(cart)
 
-
-#while itemnumber in range(0,21)
-#    cart.append(itemnumber)
-#
 #code.interact(local=locals())
 #
 # RECEIPT PRINTING
