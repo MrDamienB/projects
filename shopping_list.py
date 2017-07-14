@@ -1,3 +1,6 @@
+import datetime
+from datetime import datetime
+from datetime import time
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -38,27 +41,46 @@ cart = []
 # CHECKPOINT II WORK
 productids = [1, 8, 6, 16, 6]
 charges = []
-print ("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", productids)
+#print ("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", productids)
+print("-----------------------------")
+print("BIG TOP GROCERY")
+print("-----------------------------")
+print("www.bigtopgrocery.com")
+print("phone: 555-212-3434")
 
+today = datetime.now()
+currentdate = str(today.year) +"-"+ str(today.month) +"-"+ str(today.day)
+currenthour  = today.hour
+currentminute = today.minute
+currentsecond = today.second
+print("CHECKOUT TIME:", str(currentdate), str(currenthour) + ":" + str(currentminute)
++ ":" + str(currentsecond))
+print("-----------------------------")
+print("SHOPPING CART ITEMS:")
 for item in products:
     for purchase in productids:
         if item["id"] == purchase:
             charges.append(item["price"])
-            print (item["name"], '${0:.2f}'.format(item["price"]))
+            print (item["name"], '(${0:.2f})'.format(item["price"]))
+print("-----------------------------")
+salestax = 0.08875
+subtotal = sum(charges)
+taxcharge = (salestax * subtotal)
+total = (subtotal + taxcharge)
+print("Subtotal:"'${0:.2f}'.format(sum(charges)))
+print("Plus NYC Sales Tax (8.875%):", '(${0:.2f})'.format(taxcharge))
+print("Total:", '(${0:.2f})'.format(total))
+print("-----------------------------")
+print("Thank you for your business!  See you again soon.")
+#def calcsalestax(tax, sales):
+#    tax * sales
 
-print("YOUR TOTAL CHARGES ARE:"'${0:.2f}'.format(sum(charges)))
-
-#
-#        print("the itemnumber is: " + str(itemnumber))
-#        print(cart)
 
 #code.interact(local=locals())
 #
 # RECEIPT PRINTING
-#
-# print("BIG TOP GROCERY
-# www.bigtopgrocery.com
-# DATE TIME NOW ()
+
+#DATE TIME NOW ())
 #
 #
 #
