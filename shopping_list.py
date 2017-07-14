@@ -23,18 +23,27 @@ products = [
 #
 cart = []
 #
-while True:
-    itemnumber = input("Please enter an item number, or 'DONE' if complete:")
-    if itemnumber == "DONE":
-        print("Thanks!  You are learning... sort of.")
-        break
-    elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
-        cart.append(itemnumber)
-        print("the itemnumber is: " + str(itemnumber))
-#        print(cart)
-    else:
-        print("Please verify item")
+#while True:
+#    itemnumber = input("Please enter an item number, or 'DONE' if complete:")
+#    if itemnumber == "DONE":
+#        print("Thanks!  You are learning... sort of.")
+#        break
+#    elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
+#        cart.append(itemnumber)
+#        print("the itemnumber is: " + str(itemnumber))
+##        print(cart)
+#    else:
+#        print("Please verify item")
+#
+# CHECKPOINT II WORK
+productids = [1, 8, 6, 16, 6]
 
+print ("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", productids)
+
+for item in products:
+    for purchase in productids:
+        if item["id"] == purchase:
+            print (item["name"], '(${0:.2f})'.format(item["price"]))
 #        print("the itemnumber is: " + str(itemnumber))
 #        print(cart)
 
