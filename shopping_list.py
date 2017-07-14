@@ -37,13 +37,18 @@ cart = []
 #
 # CHECKPOINT II WORK
 productids = [1, 8, 6, 16, 6]
-
+charges = []
 print ("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", productids)
 
 for item in products:
     for purchase in productids:
         if item["id"] == purchase:
-            print (item["name"], '(${0:.2f})'.format(item["price"]))
+            charges.append(item["price"])
+            print (item["name"], '${0:.2f}'.format(item["price"]))
+
+print("YOUR TOTAL CHARGES ARE:"'${0:.2f}'.format(sum(charges)))
+
+#
 #        print("the itemnumber is: " + str(itemnumber))
 #        print(cart)
 
