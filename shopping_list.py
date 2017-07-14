@@ -25,23 +25,22 @@ products = [
 ] # Products based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 #
 cart = []
-#
-#while True:
-#    itemnumber = input("Please enter an item number, or 'DONE' if complete:")
-#    if itemnumber == "DONE":
-#        print("Thanks!  You are learning... sort of.")
-#        break
-#    elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
-#        cart.append(itemnumber)
-#        print("the itemnumber is: " + str(itemnumber))
-##        print(cart)
-#    else:
-#        print("Please verify item")
-#
+
+while True:
+    itemnumber = input("Please enter an item number, or 'DONE' if complete:")
+    if itemnumber == "DONE":
+        print("Thanks!  You are learning... sort of.")
+        break
+    elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
+        cart.append(int(itemnumber))
+        print("the itemnumber is: " + str(itemnumber))
+#        print(cart)
+    else:
+        print("Please verify item")
+
 # CHECKPOINT II WORK
-productids = [1, 8, 6, 16, 6]
+
 charges = []
-#print ("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", productids)
 print("-----------------------------")
 print("BIG TOP GROCERY")
 print("-----------------------------")
@@ -58,10 +57,10 @@ print("CHECKOUT TIME:", str(currentdate), str(currenthour) + ":" + str(currentmi
 print("-----------------------------")
 print("SHOPPING CART ITEMS:")
 for item in products:
-    for purchase in productids:
+    for purchase in cart:
         if item["id"] == purchase:
             charges.append(item["price"])
-            print (item["name"], '(${0:.2f})'.format(item["price"]))
+            print (" + ",item["name"], '(${0:.2f})'.format(item["price"]))
 print("-----------------------------")
 salestax = 0.08875
 subtotal = sum(charges)
@@ -72,16 +71,3 @@ print("Plus NYC Sales Tax (8.875%):", '(${0:.2f})'.format(taxcharge))
 print("Total:", '(${0:.2f})'.format(total))
 print("-----------------------------")
 print("Thank you for your business!  See you again soon.")
-#def calcsalestax(tax, sales):
-#    tax * sales
-
-
-#code.interact(local=locals())
-#
-# RECEIPT PRINTING
-
-#DATE TIME NOW ())
-#
-#
-#
-#
