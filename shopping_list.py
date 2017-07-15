@@ -1,6 +1,6 @@
 import datetime
 from datetime import datetime
-from datetime import time
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -22,8 +22,8 @@ products = [
     {"id":18, "name": "Pizza for One Suprema Frozen Pizza", "department": "frozen", "aisle": "frozen pizza", "price": 12.50},
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
-] # Products based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
-#
+]
+
 cart = []
 
 while True:
@@ -34,7 +34,6 @@ while True:
     elif (int(itemnumber) <= 20) & (int(itemnumber) >= 1):
         cart.append(int(itemnumber))
         print("the itemnumber is: " + str(itemnumber))
-#        print(cart)
     else:
         print("Please verify item")
 
@@ -43,6 +42,7 @@ while True:
 charges = []
 print("-----------------------------")
 print("BIG TOP GROCERY")
+
 print("-----------------------------")
 print("www.bigtopgrocery.com")
 print("phone: 555-212-3434")
@@ -52,8 +52,10 @@ currentdate = str(today.year) +"-"+ str(today.month) +"-"+ str(today.day)
 currenthour  = today.hour
 currentminute = today.minute
 currentsecond = today.second
+
 print("CHECKOUT TIME:", str(currentdate), str(currenthour) + ":" + str(currentminute)
 + ":" + str(currentsecond))
+
 print("-----------------------------")
 print("SHOPPING CART ITEMS:")
 for item in products:
@@ -61,6 +63,7 @@ for item in products:
         if item["id"] == purchase:
             charges.append(item["price"])
             print (" + ",item["name"], '(${0:.2f})'.format(item["price"]))
+
 print("-----------------------------")
 salestax = 0.08875
 subtotal = sum(charges)
@@ -69,5 +72,6 @@ total = (subtotal + taxcharge)
 print("Subtotal:"'${0:.2f}'.format(sum(charges)))
 print("Plus NYC Sales Tax (8.875%):", '(${0:.2f})'.format(taxcharge))
 print("Total:", '(${0:.2f})'.format(total))
+
 print("-----------------------------")
 print("Thank you for your business!  See you again soon.")
